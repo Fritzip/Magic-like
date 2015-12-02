@@ -40,6 +40,11 @@ public class Creature extends Carte
         return new Creature(this.name(), this.coup(), this.att, this.def) ;
     }
     
+    public String toString()
+    {
+        return super.toString() + " Att:" + this.att +" Def:"+ this.def ;
+    }
+    
     public int att()
     {
         return this.att ;

@@ -37,4 +37,10 @@ abstract class Carte
     {
         return this.coup ;
     }
+    
+    @Override
+    public String toString()
+    {
+        return "|| "+this.name+" (" +this.coup+")" ;
+    }
 }

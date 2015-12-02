@@ -48,4 +48,12 @@ class Joueur {
     {
         this.pv += inc ;
     }
+
+    void print_main()
+    {
+        for (int i = 0; i < this.main.size(); i++)
+        {
+            System.out.println(this.main.get(i));
+        }
+    }
 }

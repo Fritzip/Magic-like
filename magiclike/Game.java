@@ -32,13 +32,21 @@ class Game {
 
     public void distribution_cartes(int nb_cartes)
     {
-        for (int i = 0; i < 2; i++)
+        if (nb_cartes <= this.deck.size()/2)
         {
-            for (int j = 0; j < nb_cartes; j++)
+            for (int i = 0; i < 2; i++)
             {
-                this.joueurs[i].give_card(this.deck.get(0)) ;
-                this.deck.remove(0) ;
+                for (int j = 0; j < nb_cartes; j++)
+                {
+                    this.joueurs[i].give_card(this.deck.get(0)) ;
+                    this.deck.remove(0) ;
+                }
             }
+        }
+        else
+        {
+            System.out.println("I can not distribute as many cards");
+            System.exit(1) ;
         }
     }
     
@@ -46,6 +54,8 @@ class Game {
     {
         distribution_cartes(4) ;
         int joueur_actif = (int) Math.random()*2 ;
+        this.joueurs[joueur_actif].print_main() ;
+        
         
     }
     

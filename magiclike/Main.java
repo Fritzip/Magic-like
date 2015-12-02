@@ -15,19 +15,19 @@ public class Main
 {
     public static void main(String[] args)
     {
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+        Joueur j1 = new Joueur("Alice") ;
+        Joueur j2 = new Joueur("Bob") ;
+        Game game = new Game(j1, j2) ;
+        game.run() ;
+        
+        /*javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 Vue vue = new Vue("Magic Like");
                 
                 vue.setVisible(true);
-                vue.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-                
-                Joueur j1 = new Joueur("Alice") ;
-                Joueur j2 = new Joueur("Bob") ;
-                Game game = new Game(j1, j2) ;
-                game.run() ;
+                vue.setExtendedState(JFrame.MAXIMIZED_BOTH);
             }
-        });
+        });*/
         
         
         
