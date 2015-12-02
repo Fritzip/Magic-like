@@ -25,4 +25,9 @@ abstract class Carte
         this.name = name ;
         this.coup = coup ;
     }
+    
+    public String name()
+    {
+        return this.name ;
+    }
 }
