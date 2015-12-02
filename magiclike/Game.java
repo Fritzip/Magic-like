@@ -6,14 +6,11 @@
 package magiclike;
 
 import java.util.*;
-/**
- *
- * @author maxime
- */
+
 class Game {
 
     private Joueur[] joueurs ;
-    private ArrayList<? extends Carte> deck ;
+    private ArrayList<Carte> deck ;
     
     Game(Joueur j1, Joueur j2)
     {
@@ -21,9 +18,15 @@ class Game {
         this.joueurs[0] = j1 ;
         this.joueurs[1] = j2 ;
         
-        //this.deck = new ArrayList<? extends Carte>() ;
-        //this.deck.add( new Creature() ) ;
-        
+        this.deck = new ArrayList<Carte>() ;
+        this.deck.add( new Creature("C1", 2, 3, 1) ) ;
+        this.deck.add( new Creature("C2", 4, 3, 3) ) ;
+        this.deck.add( new Creature("C3", 5, 2, 5) ) ;
+        this.deck.add( new Creature("C4", 8, 7, 7) ) ;
+        this.deck.add( new Creature("C5", 1, 1, 2) ) ;
+        this.deck.add( new Creature("C6", 2, 1, 3) ) ;
+        this.deck.add( new Creature("C7", 3, 0, 5) ) ;
+        this.deck.add( new Creature("C8", 6, 5, 5) ) ;
     }
 
     public void distribution_cartes()
