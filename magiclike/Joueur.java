@@ -24,6 +24,14 @@ class Joueur {
     {
         this.name = s ;
         this.pv = 10 ;
+        this.main = new ArrayList<>() ;
+        this.terrain = new ArrayList<>() ;
+        this.combat = new ArrayList<>() ;
+    }
+    
+    public void give_card(Carte card)
+    {
+        this.main.add(card.copy()) ;
     }
     
     public int getPV() 
@@ -40,6 +48,4 @@ class Joueur {
     {
         this.pv += inc ;
     }
-    
-    
 }

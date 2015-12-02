@@ -28,17 +28,23 @@ class Game {
         this.deck.add( new Creature("C7", 3, 0, 5) ) ;
         this.deck.add( new Creature("C8", 6, 5, 5) ) ;
         Collections.shuffle(this.deck) ;
-        System.out.println(this.deck.get(0).name());
     }
 
-    public void distribution_cartes()
+    public void distribution_cartes(int nb_cartes)
     {
-        
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < nb_cartes; j++)
+            {
+                this.joueurs[i].give_card(this.deck.get(0)) ;
+                this.deck.remove(0) ;
+            }
+        }
     }
     
     public void run()
     {
-        distribution_cartes() ;
+        distribution_cartes(4) ;
         int joueur_actif = (int) Math.random()*2 ;
         
     }

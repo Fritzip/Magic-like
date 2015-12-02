@@ -35,5 +35,19 @@ public class Creature extends Carte
         this.def = def ;
     }
     
+    public Creature copy() 
+    {
+        return new Creature(this.name(), this.coup(), this.att, this.def) ;
+    }
+    
+    public int att()
+    {
+        return this.att ;
+    }
+    
+    public int def()
+    {
+        return this.def ;
+    }
     
 }

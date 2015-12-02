@@ -26,8 +26,15 @@ abstract class Carte
         this.coup = coup ;
     }
     
+    public abstract Carte copy() ;
+    
     public String name()
     {
         return this.name ;
+    }
+    
+    public int coup()
+    {
+        return this.coup ;
     }
 }
