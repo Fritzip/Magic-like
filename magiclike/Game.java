@@ -11,9 +11,11 @@ class Game {
 
     private Joueur[] joueurs ;
     private ArrayList<Carte> deck ;
+    private int num_tour ;
     
     Game(Joueur j1, Joueur j2)
     {
+        this.num_tour = 1 ;
         this.joueurs = new Joueur[2] ;
         this.joueurs[0] = j1 ;
         this.joueurs[1] = j2 ;
@@ -54,8 +56,20 @@ class Game {
     {
         distribution_cartes(4) ;
         int joueur_actif = (int) Math.random()*2 ;
-        this.joueurs[joueur_actif].print_main() ;
-        
+        Scanner reader = new Scanner(System.in);  // Reading from System.in
+
+        boolean in_game = true ;
+        while (in_game)
+        {
+            this.joueurs[joueur_actif].print_main() ;
+            this.joueurs[joueur_actif].set_ressources(this.num_tour);
+            int idx ;
+            do {                
+                System.out.print("Enter idx of card to invoke : ");
+                idx = reader.nextInt();    
+            } while (this.joueurs[joueur_actif].invocation(idx));
+            
+        }
         
     }
     
