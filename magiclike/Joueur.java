@@ -24,6 +24,7 @@ class Joueur {
     {
         this.name = s ;
         this.pv = 10 ;
+        this.ressources = 1000 ;
         this.main = new ArrayList<>() ;
         this.terrain = new ArrayList<>() ;
         this.combat = new ArrayList<>() ;
@@ -53,7 +54,30 @@ class Joueur {
     {
         for (int i = 0; i < this.main.size(); i++)
         {
-            System.out.println(this.main.get(i));
+            System.out.println("idx = "+i+" "+this.main.get(i));
         }
+    }
+    
+    boolean invocation(int idx_main)
+    {
+        if (idx_main < this.main.size())
+        {
+            if (this.ressources >= this.main.get(idx_main).cout())
+            {
+                this.terrain.add(this.main.get(idx_main).copy()) ;
+                this.ressources -= this.main.get(idx_main).cout() ;
+                this.main.remove(idx_main) ;
+            }    
+            return true ;
+        }
+        else
+        {
+            return false ;
+        }
+    }
+    
+    void set_ressources(int nb_ressources)
+    {
+        this.ressources = nb_ressources ;
     }
 }

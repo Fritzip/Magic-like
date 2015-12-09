@@ -12,18 +12,18 @@ package magiclike;
 abstract class Carte
 {
     private String name ;
-    private int coup ;
+    private int cout ;
     
     Carte()
     {
         this.name = "" ;
-        this.coup = 0 ;
+        this.cout = 0 ;
     }
     
-    Carte(String name, int coup)
+    Carte(String name, int cout)
     {
         this.name = name ;
-        this.coup = coup ;
+        this.cout = cout ;
     }
     
     public abstract Carte copy() ;
@@ -33,14 +33,14 @@ abstract class Carte
         return this.name ;
     }
     
-    public int coup()
+    public int cout()
     {
-        return this.coup ;
+        return this.cout ;
     }
     
     @Override
     public String toString()
     {
-        return "|| "+this.name+" (" +this.coup+")" ;
+        return "|| "+this.name+" (" +this.cout+")" ;
     }
 }

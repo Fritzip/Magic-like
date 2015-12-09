@@ -21,23 +21,23 @@ public class Creature extends Carte
         this.def = 0 ;
     }
     
-    Creature(String name, int coup)
+    Creature(String name, int cout)
     {
-        super(name, coup);
+        super(name, cout);
         this.att = 0 ;
         this.def = 0 ;
     }
     
-    Creature(String name, int coup, int att, int def)
+    Creature(String name, int cout, int att, int def)
     {
-        super(name, coup) ;
+        super(name, cout) ;
         this.att = att ;
         this.def = def ;
     }
     
     public Creature copy() 
     {
-        return new Creature(this.name(), this.coup(), this.att, this.def) ;
+        return new Creature(this.name(), this.cout(), this.att, this.def) ;
     }
     
     public String toString()
