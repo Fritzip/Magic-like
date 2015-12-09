@@ -7,11 +7,11 @@ package magiclike;
 
 import java.util.*;
 
-class Game {
+class Game extends Observable{
 
     private Joueur[] joueurs ;
     private ArrayList<Carte> deck ;
-    
+
     Game(Joueur j1, Joueur j2)
     {
         this.joueurs = new Joueur[2] ;
@@ -46,8 +46,11 @@ class Game {
         else
         {
             System.out.println("I can not distribute as many cards");
-            System.exit(1) ;
+//            System.exit(1) ;
         }
+
+        this.setChanged();
+        this.notifyObservers();
     }
     
     public void run()
